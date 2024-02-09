@@ -22,12 +22,28 @@ function App() {
   }
   
   const [cards, setCards] = useState(shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]));
+  const Card = props => {
+    return (<div className="card" onClick={() => {
+      setGuesses([...guesses, props.n])
+      setCards(cards => shuffle([...cards]))
+      }}>{props.n}</div>)
+  }
 
+  const Board = () => {
+    let BoardHTML =( 
+    <div className='board'>
+      {cards.map(card => {
+        return <Card n={card} key={card}/>
+      })}
+    </div>)
+    
 
+    return BoardHTML;
+  }
 
   return (
     <>
-      
+      <Board />
     </>
   )
 }
