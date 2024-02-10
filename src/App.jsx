@@ -31,15 +31,14 @@ function App() {
   }
 
   useEffect(() => {
+    setScore(() => guesses.length)
     if (guesses.length != new Set(guesses).size) {
       reset()
       alert('You Lost!')
-    } else {
-      setScore(() => guesses.length)
-      if (guesses.length == cards.length) {
-        reset()
-        alert('You Won!')
-      }
+    } else if (guesses.length == cards.length) {
+      reset()
+      alert('You Won!')
+      
     }
   }, [guesses])
   
