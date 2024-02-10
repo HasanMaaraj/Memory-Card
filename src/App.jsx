@@ -6,10 +6,9 @@ function App() {
   const [highScore, setHighScore] = useState(0);
   const [guesses, setGuesses] = useState([]);
 
-  const reset = currentScore => {
-    setGuesses([]);
-    if (currentScore > highScore) setHighScore(currentScore);
+  const reset = () => {
     setScore(0);
+    setGuesses([]);
   }
 
   
@@ -29,6 +28,26 @@ function App() {
       }}>{props.n}</div>)
   }
 
+  useEffect(() => {
+    if (guesses.length != new Set(guesses).size) {
+      reset()
+      alert('You Lost!')
+    } else {
+      setScore(() => guesses.length)
+      if (guesses.length == cards.length) {
+        reset()
+        alert('You Won!')
+      }
+    }
+  }, [guesses])
+  
+
+
+  useEffect(()=> {
+    if (score > highScore) setHighScore(() => score);
+  }, [score])
+
+
   const Board = () => {
     let BoardHTML =( 
     <div className='board'>
@@ -43,6 +62,7 @@ function App() {
 
   return (
     <>
+      <>Score: {score} High Score: {highScore}</>
       <Board />
     </>
   )
