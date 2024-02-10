@@ -22,7 +22,7 @@ function App() {
 
   const [cards, setCards] = useState(shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]));
   const Card = props => {
-    return (<div className="card" onClick={() => {
+    return (<div className='card' onClick={() => {
       setGuesses([...guesses, props.n])
       setCards(cards => shuffle([...cards]))
       }}>
@@ -78,10 +78,10 @@ function App() {
 
       <footer>
         <div>
-        Stickers from: <a href="https://www.flaticon.com/stickers-pack/animals-139">FLATICON</a>
+        Stickers from: <a href='https://www.flaticon.com/stickers-pack/animals-139'>FLATICON</a>
         </div>
-        <a href="https://github.com/HasanMaaraj">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" id="github-img"/>
+        <a href='https://github.com/HasanMaaraj'>
+        <img src='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg' id='github-img'/>
         </a>
           
       </footer>
