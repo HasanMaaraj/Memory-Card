@@ -1,42 +1,64 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  display: grid;
+  grid-template-rows: 1fr 5fr 1fr;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+header,
+footer {
+  background-color: burlywood;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+main {
+  display: grid;
+  background-color: forestgreen;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.scores {
+  margin: 3rem;
+  align-self: start;
+  display: flex;
+  justify-content: center;
+  gap: 8rem;
+  font-size: 1.3rem;
+}
+
+.board img {
+  height: 8rem;
+  width: auto;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 4rem;
+  padding: 2rem;
 }
 
 .card {
-  padding: 2em;
+  background-color: aliceblue;
+  border-radius: .5rem;
+  box-shadow: .2rem .2rem .5rem black;
+  padding: 1.1rem;
 }
 
-.read-the-docs {
-  color: #888;
+.card:hover {
+  background-color: aquamarine;
+  box-shadow: .2rem .2rem 1rem black;
+
+}
+
+footer {
+  display: grid;
+  justify-items: center;
+  gap: 2rem;
+  padding: 6px;
+}
+
+#github-img {
+  height: 3rem;
+  width: auto;
+  display: block;
 }

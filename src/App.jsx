@@ -64,8 +64,27 @@ function App() {
 
   return (
     <>
-      <>Score: {score} High Score: {highScore}</>
-      <Board />
+      <header>
+        <h1>Memory Card</h1>
+      </header>
+
+      <main>
+        <div className='scores'>
+          <div>Score: {score}</div>
+          <div>High Score: {highScore}</div>
+        </div>
+        <Board />
+      </main>
+
+      <footer>
+        <div>
+        Stickers from: <a href="https://www.flaticon.com/stickers-pack/animals-139">FLATICON</a>
+        </div>
+        <a href="https://github.com/HasanMaaraj">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" id="github-img"/>
+        </a>
+          
+      </footer>
     </>
   )
 }
