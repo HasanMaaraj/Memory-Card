@@ -38,7 +38,6 @@ function App() {
     } else if (guesses.length == cards.length) {
       reset()
       alert('You Won!')
-      
     }
   }, [guesses])
   
