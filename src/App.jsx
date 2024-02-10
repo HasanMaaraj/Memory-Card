@@ -36,6 +36,7 @@ function App() {
       reset()
       alert('You Lost!')
     } else if (guesses.length == cards.length) {
+      setHighScore(12)
       reset()
       alert('You Won!')
     }
