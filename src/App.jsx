@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-
+import images from './images.jsx'
 function App() {
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
@@ -19,13 +19,15 @@ function App() {
     } 
     return array; 
   }
-  
+
   const [cards, setCards] = useState(shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]));
   const Card = props => {
     return (<div className="card" onClick={() => {
       setGuesses([...guesses, props.n])
       setCards(cards => shuffle([...cards]))
-      }}>{props.n}</div>)
+      }}>
+        <img src={images[props.n-1]}/>
+      </div>)
   }
 
   useEffect(() => {
